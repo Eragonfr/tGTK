@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=tGTK-xfce-v0.3
-Comment=GTK theme for xfce engine
+Name=tGTK-v0.3
+Comment=GTK theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-Name=tGTK-xfce-v0.3
-Comment=GTK theme for xfce engine
-Comment[fr]=Thème GTK pour xfce
-GtkTheme=tGTK-xfce-v0.3
-IconTheme=tGTK-xfce-v0.3
-MetacityTheme=tGTK-xfce-v0.3
+Name=tGTK-v0.3
+Comment=GTK theme
+Comment[fr]=Thème GTK
+GtkTheme=tGTK-v0.3
+IconTheme=tGTK-v0.3
+MetacityTheme=tGTK-v0.3
