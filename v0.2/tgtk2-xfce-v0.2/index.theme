@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=tGTK2-xfce-v0.2
+Comment=GTK 2 theme for xfce engine
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=tGTK2-xfce-v0.2
+Comment=GTK 2 theme for xfce engine
+Comment[fr]=Thème GTK 2 pour xfce
+GtkTheme=tGTK2-xfce-v0.2
+
