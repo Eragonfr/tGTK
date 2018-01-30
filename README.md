@@ -36,3 +36,8 @@ This is a **GTK 2 and GTK 3** theme for **MURINE** engine, this theme is in vers
 This is a **GTK 2** theme for **MURINE**, this theme is in version 0.2
 (bug fix and rendered a bit less flat)
 This theme only includes GTK 2 support
+
+##version 0.3
+
+##tgtk-v0.3
+This version includes the GTK 2, xfce and murine versions.
