@@ -44,4 +44,7 @@ version 0.3
 
 ## tgtk-v0.3
 This version includes the GTK 2, xfce and murrine versions.
-
+**BUGS :**  
+Buttons are too big.  
+Rounding is too round.  
+Shadow gradients are too contrasted.
