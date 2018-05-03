@@ -3,58 +3,61 @@
 ***************/
 
 @include exports("window") {
-    %window {
-        box-shadow: 0 19px 38px rgba(0, 0, 0, .3), 0 15px 12px rgba(0, 0, 0, .22),
-                    0 0 0 1px $wm_border_focused;
+    decoration {
+        $_wm_border: if($variant == 'light', transparentize($black, .77), transparentize($borders_color, .1));
+
+        border-radius: $roundness $roundness 0 0;
+        // lamefun trick to get rounded borders regardless of CSD use
+        //border-width: 0;
+
+        //box-shadow: 0 3px 9px 1px transparentize($black, .3), 0 0 0 1px $wm_border_focused; //doing borders with box-shadow
+        /* this is used for the resize cursor area */
+        //margin: $spacing * 3;
+
+        border-width: $spacing % 2;
+        border-style: solid;
+        //border-color: $wm_border_focused;
+        //@TODO:
+        border-color: $wm_border_unfocused;
+
 
         &:backdrop {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23),
-                        0 0 0 1px $wm_border_unfocused;
+            //box-shadow: 0 3px 9px 1px transparent, 0 2px 6px 2px transparentize($black, .6), 0 0 0 1px $wm_border_unfocused;
+            border-color: $wm_border_unfocused;
+            transition: 200ms ease-out;
         }
-    }
 
-    .window-frame {
-        @extend %window;
+        .maximized &, .fullscreen &, .tiled & { border-radius: 0; }
 
-        border: 0;
-        border-radius: $roundness $roundness 0 0;
-        background-color: mix(shade($titlebar_bg_color, 0.7), $titlebar_fg_color, 0.21);
-        /* this is used for the resize cursor area */
-        margin: $spacing * 3;
+        .popup & { box-shadow: none; }
 
-        &.tiled { border-radius: 0; }
+        // this needs to be transparent
+        // see bug #722563
+        // server-side decorations as used by mutter
+        // Fixed gtk-3.18 Unity bug (https://github.com/numixproject/numix-gtk-theme/issues/270)
+        .ssd & { box-shadow: 0 0 0 1px $wm_border_focused; } //just doing borders, wm draws actual shadows
 
-        &.solid-csd {
-            border-radius: $roundness $roundness 0 0;
-            margin: 1px;
-            background-color: mix(shade($titlebar_bg_color, 0.7), $titlebar_fg_color, 0.21);
+        .solid-csd & {
+            border-radius: 0;
+            //margin: 1px;
+            //background-color: $bg_color;
+            // Unity/compiz regression: Issue: https://github.com/numixproject/numix-gtk-theme/issues/206
             box-shadow: none;
         }
 
-        &.csd {
-            &.popup {
-                @extend %window;
-
-                border-radius: 0;
-            }
-
-            &.tooltip {
-                border-radius: $roundness;
-                box-shadow: none;
-            }
-
-            &.message-dialog {
-                @extend %window;
-
-                border-radius: $roundness;
-            }
+        .csd.popup & {
+            border-radius: 0;
+            box-shadow: 0 1px 2px transparentize($black, .8), 0 0 0 1px transparentize($_wm_border, .1);
         }
 
-        &.ssd {
-            // Fixed gtk-3.18 Unity bug (https://github.com/numixproject/numix-gtk-theme/issues/270)
-            box-shadow: 0 0 0 1px $wm_border_focused;
+        tooltip.csd & {
+            border-radius: $roundness;
+            box-shadow: none;
+        }
 
-            &.maximized { border-radius: 0; }
+        messagedialog.csd & {
+            border-radius: $roundness;
+            box-shadow: 0 1px 2px transparentize($black, .8), 0 0 0 1px transparentize($_wm_border, .1);
         }
     }
 }

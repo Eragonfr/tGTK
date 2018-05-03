@@ -25,6 +25,9 @@
 @import "widgets/view";
 @import "widgets/window";
 
+@import "apps/mate-applications";
+@import "apps/cinnamon-applications";
+@import "apps/gnome-applications";
 @import "apps/unity-greeter";
 @import "apps/gedit";
 @import "apps/nautilus";
@@ -35,3 +38,4 @@
 @import "apps/unity";
 @import "apps/lightdm";
 @import "apps/gnome-terminal";
+@import "apps/budgie";
