@@ -3,18 +3,18 @@
 @import "functions";
 
 // default color scheme
-$bg_color: if($variant == "dark", #505050, #121212);
-$fg_color: if($variant == "dark", #121212, #505050);
-$base_color: if($variant == "dark", #4c4c4c, #888a85);
-$text_color: if($variant == "dark", #888a85, #4c4c4c);
-$button_bg_color: if($variant == "dark", #001b33, #003d70);
-$button_fg_color: if($variant == "dark", #003d70, #001b33);
-$header_button_bg_color: #6b6b6b;
-$header_button_fg_color: #002849;
-$selected_bg_color: #003561;
-$selected_fg_color: #818181;
-$tooltip_bg_color: #121212;
-$tooltip_fg_color: #505050;
+$bg_color: #333333;
+$fg_color: #dcdcdc;
+$base_color: #333333;
+$text_color: #dcdcdc;
+$button_bg_color: #333333;
+$button_fg_color: #1568A4;
+$header_button_bg_color: #3d3d3d;
+$header_button_fg_color: #1568A4;
+$selected_bg_color: #1568A4;
+$selected_fg_color: #f9f9f9;
+$tooltip_bg_color: #2b2b2b;
+$tooltip_fg_color: #dcdcdc;
 
 /*$selected_borders_color: if($variant == 'light', darken($selected_bg_color, 30%), darken($selected_bg_color, 20%));*/
 /*$borders_color: if($variant == 'light', shade($bg_color, .85), shade($bg_color, .88));*/
@@ -23,8 +23,8 @@ $borders_color: if($variant == 'light', mix($bg_color, $fg_color, .08), shade($b
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
 
 // dark colors
-$dark_bg_color: #232323;
-$dark_fg_color: #888a85;
+$dark_bg_color: #333333;
+$dark_fg_color: #dcdcdc;
 
 // shadows
 /*$dark_shadow: #000;*/
@@ -60,7 +60,6 @@ $switch_bg_color: mix($bg_color, $base_color, .3);
 $switch_fg_color: $text_color;
 $switch_slider_bg_color: mix($text_color, $bg_color, .5);
 
-// @TODO: replace to xrdb values:
 // misc colors used by gtk+
 $info_fg_color: #fff;
 $info_bg_color: #03a9f4;
@@ -147,4 +146,4 @@ $_spacing: 3;
 $roundness: 4px;
 $spacing: 3px;
 $gradient: 0.5;
-$contrast: .8;
+$contrast: .6;

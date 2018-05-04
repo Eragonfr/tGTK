@@ -1,4 +1,7 @@
-gtk-color-scheme = "bg_color:#333333\nfg_color:#dcdcdc\nbase_color:#333333\ntext_color:#dcdcdc\nselected_bg_color:#1568A4\nselected_fg_color:#f9f9f9\ntooltip_bg_color:#2d2d2d\ntooltip_fg_color:#dedede\ntitlebar_bg_color:#2d2d2d\ntitlebar_fg_color:#dcdcdc\nmenubar_bg_color:#2d2d2d\nmenubar_fg_color:#dcdcdc\ntoolbar_bg_color:#333333\ntoolbar_fg_color:#dcdcdc\nmenu_bg_color:#2d2d2d\nmenu_fg_color:#dcdcdc\npanel_bg_color:#2d2d2d\npanel_fg_color:#dcdcdc\nlink_color:#1568A4"
+gtk-color-scheme = "base_color:#333333\nbg_color:#333333\nfg_color:#dcdcdc\ntext_color:#dcdcdc\nselected_bg_color:#1568A4\nselected_fg_color:#f9f9f9\ntooltip_bg_color:#2d2d2d\ntooltip_fg_color:#dedede\ntitlebar_bg_color:#2d2d2d\ntitlebar_fg_color:#dcdcdc\nmenubar_bg_color:#2d2d2d\nmenubar_fg_color:#dcdcdc\ntoolbar_bg_color:#333333\ntoolbar_fg_color:#dcdcdc\nmenu_bg_color:#2d2d2d\nmenu_fg_color:#dcdcdc\npanel_bg_color:#2d2d2d\npanel_fg_color:#dcdcdc\nlink_color:#1568A4\nbtn_bg_color:#333333\nbtn_fg_color:#001b33"
+
+
+
 # Default Style
 
 style "murrine-default" {
@@ -117,7 +120,7 @@ style "murrine-default" {
 	text[INSENSITIVE] = mix (0.5, @base_color, @text_color)
 
 	engine "murrine" {
-		animation = FALSE
+		animation = TRUE
 		arrowstyle = 1 # 0 = normal arrows, 1 = filled arrows
 		border_shades = { 1.0, 1.0 } # gradient to draw on border
 		border_colors = { mix(0.2, @fg_color, @bg_color), mix(0.2, @fg_color, @bg_color) }
@@ -140,12 +143,12 @@ style "murrine-default" {
 		menustyle = 0 # 0 = none, 1 = vertical striped
 		progressbarstyle = 0 # 0 = none, 1 = diagonal striped, 2 = vertical striped
 		reliefstyle = 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		roundness = 12# roundness of widgets
+		roundness = 8# roundness of widgets
 		scrollbarstyle = 0 # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle = 0 # 0 = none, 1 = handles
 		stepperstyle = 1 # 0 = standard, 1 = integrated stepper handles
 		toolbarstyle = 0 # 0 = flat, 1 = glassy, 2 = gradient
-   }
+	}
 }
 
 style "murrine-wide" {
@@ -190,7 +193,7 @@ style "murrine-button"  = "murrine-wider" {
 
 	engine "murrine" {
 		border_colors = { mix(0.4, @btn_fg_color, @btn_bg_color), mix(0.4, @btn_fg_color, @btn_bg_color) }
-		roundness = 12
+		roundness = 8
 	}
 }
 
@@ -211,8 +214,8 @@ style "murrine-scrollbar" {
 	bg[ACTIVE] = @selected_bg_color
 
 	engine "murrine" {
-		roundness = 12
-		contrast = 0.0
+		roundness = 8
+		contrast = 0.6
 		border_shades = { 0.9, 0.9 }
 		trough_shades = { 0.97, 0.97 }
 		trough_border_shades = { 1.0, 1.0 }
@@ -249,7 +252,7 @@ style "murrine-progressbar" = "murrine-thin" {
 	fg[PRELIGHT] = @selected_fg_color
 
 	engine "murrine" {
-		roundness = 12
+		roundness = 8
 		border_shades = { 1.2, 1.2 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -268,13 +271,13 @@ style "murrine-treeview-header" = "murrine-button" {
 	fg[ACTIVE] = @text_color
 	fg[INSENSITIVE] = mix(0.20, @bg_color, @text_color)
   	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
 style "murrine-treeview" {
   	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -297,7 +300,7 @@ style "murrine-tooltips" {
 
 	engine "murrine" {
 		textstyle = 0
-		roundness = 12
+		roundness = 8
 		rgba = FALSE
 	}
 }
@@ -327,7 +330,7 @@ style "murrine-entry" = "murrine-wider" {
 	engine "murrine" {
 		#border_shades = { 1.15, 1.15 }
 		border_colors = { mix(0.4, @text_color, @base_color), mix(0.4, @text_color, @base_color) }
-		roundness = 12
+		roundness = 8
 	}
 }
 
@@ -364,7 +367,7 @@ style "murrine-menu" = "murrine-thin" {
 	text[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -401,7 +404,7 @@ style "murrine-menubar" {
 	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -419,7 +422,7 @@ style "murrine-menubaritem" {
 	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -493,8 +496,8 @@ style "murrine-panel" = "murrine-thin" {
 	text[INSENSITIVE] = mix (0.5, @panel_bg_color, @panel_fg_color)
 
 	engine "murrine" {
-		roundness = 0
-		contrast = 0.0
+		roundness = 5
+		contrast = 0.6
 	}
 }
 
@@ -524,7 +527,7 @@ style "bold-panel-item" {
 	font_name = "Bold"
 
 	engine "murrine" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -584,7 +587,7 @@ style "xfwm-tabwin" {
 	fg[NORMAL] = @menu_fg_color
 
 	engine "murrine" {
-		contrast = 0.0
+		contrast = 0.6
 		border_shades = { 0.9, 0.9 }
 	}
 }
@@ -670,7 +673,7 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "chromium-toolbar-button" {
 	engine "murrine" {
-		roundness = 12
+		roundness = 8
 		textstyle = 0
 	}
 }
@@ -1039,7 +1042,7 @@ style "default" {
 	text[INSENSITIVE] = mix (0.5, @base_color, @text_color)
 
 	engine "xfce" {
-		animation = FALSE
+		animation = TRUE
 		arrowstyle = 1 # 0 = normal arrows, 1 = filled arrows
 		border_shades = { 1.0, 1.0 } # gradient to draw on border
 		border_colors = { mix(0.2, @fg_color, @bg_color), mix(0.2, @fg_color, @bg_color) }
@@ -1062,12 +1065,12 @@ style "default" {
 		menustyle = 0 # 0 = none, 1 = vertical striped
 		progressbarstyle = 0 # 0 = none, 1 = diagonal striped, 2 = vertical striped
 		reliefstyle = 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		roundness = 12# roundness of widgets
+		roundness = 8# roundness of widgets
 		scrollbarstyle = 0 # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle = 0 # 0 = none, 1 = handles
 		stepperstyle = 1 # 0 = standard, 1 = integrated stepper handles
 		toolbarstyle = 0 # 0 = flat, 1 = glassy, 2 = gradient
-   }
+	}
 }
 
 style "xfce-wide" {
@@ -1112,7 +1115,7 @@ style "xfce-button"  = "xfce-wider" {
 
 	engine "xfce" {
 		border_colors = { mix(0.4, @btn_fg_color, @btn_bg_color), mix(0.4, @btn_fg_color, @btn_bg_color) }
-		roundness = 12
+		roundness = 8
 	}
 }
 
@@ -1133,8 +1136,8 @@ style "xfce-scrollbar" {
 	bg[ACTIVE] = @selected_bg_color
 
 	engine "xfce" {
-		roundness = 12
-		contrast = 0.0
+		roundness = 8
+		contrast = 0.6
 		border_shades = { 0.9, 0.9 }
 		trough_shades = { 0.97, 0.97 }
 		trough_border_shades = { 1.0, 1.0 }
@@ -1171,7 +1174,7 @@ style "xfce-progressbar" = "xfce-thin" {
 	fg[PRELIGHT] = @selected_fg_color
 
 	engine "xfce" {
-		roundness = 12
+		roundness = 8
 		border_shades = { 1.2, 1.2 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -1190,13 +1193,13 @@ style "xfce-treeview-header" = "xfce-button" {
 	fg[ACTIVE] = @text_color
 	fg[INSENSITIVE] = mix(0.20, @bg_color, @text_color)
   	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
 style "xfce-treeview" {
   	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -1219,7 +1222,7 @@ style "xfce-tooltips" {
 
 	engine "xfce" {
 		textstyle = 0
-		roundness = 12
+		roundness = 8
 		rgba = FALSE
 	}
 }
@@ -1249,7 +1252,7 @@ style "xfce-entry" = "xfce-wider" {
 	engine "xfce" {
 		#border_shades = { 1.15, 1.15 }
 		border_colors = { mix(0.4, @text_color, @base_color), mix(0.4, @text_color, @base_color) }
-		roundness = 12
+		roundness = 8
 	}
 }
 
@@ -1286,7 +1289,7 @@ style "xfce-menu" = "xfce-thin" {
 	text[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
 
 	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -1323,7 +1326,7 @@ style "xfce-menubar" {
 	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
 
 	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -1341,7 +1344,7 @@ style "xfce-menubaritem" {
 	fg[INSENSITIVE] = mix (0.5, @menubar_bg_color, @menubar_fg_color)
 
 	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -1415,8 +1418,8 @@ style "xfce-panel" = "xfce-thin" {
 	text[INSENSITIVE] = mix (0.5, @panel_bg_color, @panel_fg_color)
 
 	engine "xfce" {
-		roundness = 0
-		contrast = 0.0
+		roundness = 5
+		contrast = 0.6
 	}
 }
 
@@ -1446,7 +1449,7 @@ style "bold-panel-item" {
 	font_name = "Bold"
 
 	engine "xfce" {
-		roundness = 0
+		roundness = 5
 	}
 }
 
@@ -1506,7 +1509,7 @@ style "xfwm-tabwin" {
 	fg[NORMAL] = @menu_fg_color
 
 	engine "xfce" {
-		contrast = 0.0
+		contrast = 0.6
 		border_shades = { 0.9, 0.9 }
 	}
 }
@@ -1592,7 +1595,7 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "chromium-toolbar-button" {
 	engine "xfce" {
-		roundness = 12
+		roundness = 8
 		textstyle = 0
 	}
 }
