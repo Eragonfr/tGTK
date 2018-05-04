@@ -1,0 +1,5 @@
+# Ignore scss files on master
+*.scss
+Makefile
+
+Numix-DarkBlue/
