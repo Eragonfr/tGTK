@@ -1,5 +1,7 @@
 # Ignore scss files on master
 *.scss
+
+# Ignore scss makefile
 Makefile
 
 Numix-DarkBlue/
