@@ -9,12 +9,10 @@ tGTK
 This version includes the GTK 2, xfce and murrine versions.
 
 ## tgtk-v0.4
-This release replaces tgtk 0.3  
-**BUGS :**  
-- Buttons are too big.
-
-### Les versions précédentes existent toujour mais sont considéré comme étant obsolètes
+This release replaces tgtk 0.3
+**BUGS :**
+- Buttons are too big in GTK2.
 
 ### TODO :
 
-- Résoudre les bugs
+- Résolve bugs
